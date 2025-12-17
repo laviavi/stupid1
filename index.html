@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>GeoSpatial Studio — Polygon & Point Toolkit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- App styles -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body class="bg-slate-50 text-slate-800" id="app">
+  <div class="flex flex-col h-full">
+
+    <!-- ===== TOOLBAR (UNCHANGED MARKUP) ===== -->
+    <!-- (keep your existing toolbar HTML exactly as it is) -->
+
+    <main class="flex-1 relative">
+      <div id="contextMenu" class="absolute z-50 bg-white border rounded-lg shadow-lg py-1 w-40 text-sm hidden">
+        <div id="contextAddPoint" class="px-3 py-2 cursor-pointer hover:bg-slate-100">
+          Add point here
+        </div>
+      </div>
+
+      <div id="simplifyModal" class="absolute inset-0 z-50 hidden flex items-center justify-center"></div>
+
+      <div id="map" class="absolute inset-0"></div>
+
+      <div id="resultsWindow" class="absolute right-6 top-20 w-96 glass rounded-lg p-4 z-40"></div>
+    </main>
+
+  </div>
+
+  <!-- External libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/6.5.0/turf.min.js"></script>
+
+  <!-- ⚠️ Replace with your own API key before deploying -->
+  <script
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB1rdKP9Y6qZVzkXaOyfL5sU2QmqjHMzvw&libraries=geometry,places,drawing"
+    defer>
+  </script>
+
+  <!-- App logic -->
+  <script src="./app.js" defer></script>
+</body>
+</html>
